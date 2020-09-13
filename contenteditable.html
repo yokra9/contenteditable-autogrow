@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+        window.onload = function () {
+
+            function stretchElem(target) {
+                target.style.height = "0px"
+                target.style.height = [target.scrollHeight, "px"].join("")
+                if (target.style.height == "0px") target.style.height = "1.5em"
+            }
+
+            document.querySelector("div").addEventListener('input', function (e) {
+                stretchElem(e.target)
+            })
+
+        }
+
+    </script>
+    <style>
+        main{
+            border: 1px solid black;
+        }
+        div{
+            height: 1.5em;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div contenteditable></div>
+    </main>
+</body>
+
+</html>

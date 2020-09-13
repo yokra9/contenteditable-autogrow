@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        window.onload = function () {
+
+            function stretchElem(target) {
+                target.style.height = "0px"
+                target.style.height = [target.scrollHeight, "px"].join("")
+            }
+
+            document.querySelector("textarea").addEventListener('input', function (e) {
+                stretchElem(e.target)
+            })
+
+            // 初期表示時にも実行
+            stretchElem(document.querySelector("textarea"))
+
+        }
+
+    </script>
+    <style>
+        textarea{
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <textarea>looooooooooooooooooooooooooooooooooooooooooooooooooong text</textarea>
+
+</body>
+
+</html>
